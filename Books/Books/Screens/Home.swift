@@ -16,9 +16,15 @@ struct Home: View {
             ScrollView {
                
                 DisCountCarouselView()
+                TopOfWeekCarouselView()
+                VendorCarouselView()
+                AuthorCarouselView()
+                
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
+            .background(.white)
+            
             
         }
 

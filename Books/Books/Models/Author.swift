@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-struct Author {
+struct Author:Identifiable {
+    let id:UUID = UUID()
     let fullname: String
     let image: ImageResource
     let bio:String
+    let type: String
     
 }
 
 extension Author{
-    static let author: [Author] = [
-        Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the  "),
-        Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the  "),
-        Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the  "),
-        Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the  "),
-        Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the  "),
-        Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the  "),
+    static let authors: [Author] = [
+        Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the",type: "Writer"),
+        Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the",type: "Novelist"),
+        Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the",type: "Writer"),
+        Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the",type: "Writer"),
+        
     ]
 }
