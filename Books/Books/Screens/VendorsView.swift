@@ -7,12 +7,18 @@
 
 import SwiftUI
 
+
+
 struct VendorsView: View {
 
     static let categories = [
         "All", "Books", "Poems", "Special for you", "Stationary",
     ]
     @State private var selectedCategory = "All"
+    
+    let vendors = Vendor.vendors
+    
+    let columns = Array(repeating: GridItem(.flexible(), spacing: 16), count: 3)
 
     var body: some View {
         VStack {
@@ -57,7 +63,7 @@ struct VendorsView: View {
                                     )
                                     .frame(height: 2)
                             }
-                            .fixedSize() 
+                            .fixedSize()
                             
                         }
 
@@ -66,6 +72,11 @@ struct VendorsView: View {
 
             }
             .frame(maxWidth: .infinity)
+            .padding(.bottom,28)
+            
+            VendorsGridView()
+            
+           
 
         }
         .navigationTitle("Vendors")
