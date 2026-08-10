@@ -8,25 +8,22 @@
 import SwiftUI
 
 struct Home: View {
-    
+    @State private var selectedID: Discount.ID?
     var body: some View {
-        NavigationStack{
-            ScrollView{
-                HStack{
-                    
-                }
+      
+
+        NavigationStack {
+            ScrollView {
+               
+                DisCountCarouselView()
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
+            
         }
-        
-        
-        
-        
-        
+
     }
 
-    
 }
 
 #Preview {
