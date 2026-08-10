@@ -13,7 +13,6 @@ struct Vendor:Identifiable{
     let name: String
     let logo: ImageResource
     let stars: Int
-    
 }
 
 
