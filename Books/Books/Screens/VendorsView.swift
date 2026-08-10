@@ -21,7 +21,7 @@ struct VendorsView: View {
     let columns = Array(repeating: GridItem(.flexible(), spacing: 16), count: 3)
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text("Our vendors")
                 .font(.system(size: 14))
                 .foregroundStyle(.secondary)
