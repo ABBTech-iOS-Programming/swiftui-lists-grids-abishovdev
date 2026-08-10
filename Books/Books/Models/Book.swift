@@ -20,7 +20,7 @@ struct Book:Identifiable{
 extension Book{
     static let books: [Book] = [
         Book(name: "The Kite Runner", category: "dram", topOfWeek: true, image: .kiteRunner,price: 10.00),
-        Book(name: "The Kite Runner", category: "dram", topOfWeek: true, image: .kiteRunner,price: 10.00),
+        Book(name: "The Kite Runner", category: "dram", topOfWeek: true, image: .book2,price: 10.00),
         Book(name: "The Kite Runner", category: "dram", topOfWeek: true, image: .kiteRunner,price: 10.00),
         Book(name: "The Kite Runner", category: "dram", topOfWeek: true, image: .kiteRunner,price: 10.00),
     ]

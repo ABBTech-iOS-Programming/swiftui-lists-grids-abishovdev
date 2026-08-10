@@ -8,19 +8,29 @@
 import SwiftUI
 
 struct AuthorListView: View {
-    let authors = Author.authors
+    let authors : [Author]
     var body: some View {
         ScrollView(){
-            LazyVStack(spacing: 32){
-                ForEach(authors){author in
-                        AuthorInfoCard(author: author)
-                    
+            if authors.isEmpty {
+                Text("No authors found")
+                    .font(.system(size: 16))
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 60)
+            }
+            else{
+                LazyVStack(spacing: 32){
+                    ForEach(authors){author in
+                            AuthorInfoCard(author: author)
+                        
+                    }
                 }
             }
+            
         }
     }
 }
 
 #Preview {
-    AuthorListView()
+    AuthorListView(authors: [Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the",type: "Writer",profession: .poets)])
 }

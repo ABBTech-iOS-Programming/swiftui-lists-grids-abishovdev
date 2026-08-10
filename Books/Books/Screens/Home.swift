@@ -8,22 +8,27 @@
 import SwiftUI
 
 struct Home: View {
-    @State private var selectedID: Discount.ID?
+    
     var body: some View {
       
 
         NavigationStack {
-            ScrollView {
+            ScrollView{
+                
+                VStack(spacing: 32){
+                    DisCountCarouselView()
+                    TopOfWeekCarouselView()
+                    VendorCarouselView()
+                    AuthorCarouselView()
+                }
                
-                DisCountCarouselView()
-                TopOfWeekCarouselView()
-                VendorCarouselView()
-                AuthorCarouselView()
+               
                 
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
             .background(.white)
+            
             
             
         }

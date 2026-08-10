@@ -31,5 +31,5 @@ struct VendorGridCard: View {
 }
 
 #Preview {
-    VendorGridCard(vendor: Vendor(name: "Wattpad", logo: .book, stars: 4))
+    VendorGridCard(vendor: Vendor(name: "Wattpad", logo: .book, stars: 4,category: .books))
 }
