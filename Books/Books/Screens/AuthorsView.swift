@@ -14,6 +14,17 @@ struct AuthorsView: View {
     ]
     @State private var selectedCategory = "All"
     
+    let authors = Author.authors
+    
+    var filteredAuthors : [Author]  {
+        if selectedCategory ==  "All"{
+            return authors
+        }
+        
+        return authors.filter({$0.profession.rawValue == selectedCategory})
+        
+    }
+    
     
     var body: some View {
         
@@ -71,7 +82,7 @@ struct AuthorsView: View {
             .frame(maxWidth: .infinity)
             .padding(.bottom,28)
             
-            AuthorListView()
+            AuthorListView(authors:filteredAuthors)
             
         }
         .navigationTitle("Authors")

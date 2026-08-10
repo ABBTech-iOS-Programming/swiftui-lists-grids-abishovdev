@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "gooDay.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

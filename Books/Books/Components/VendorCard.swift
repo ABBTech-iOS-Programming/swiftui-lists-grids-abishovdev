@@ -20,5 +20,5 @@ struct VendorCard: View {
 }
 
 #Preview {
-    VendorCard(vendor:Vendor(name: "Wattpad", logo: .book, stars: 3))
+    VendorCard(vendor:Vendor(name: "Wattpad", logo: .book, stars: 3,category: .books))
 }

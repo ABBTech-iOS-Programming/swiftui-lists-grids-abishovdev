@@ -18,6 +18,17 @@ struct VendorsView: View {
     
     let vendors = Vendor.vendors
     
+    var filteredVendors: [Vendor] {
+        if selectedCategory == "All" {
+            return vendors
+        }
+        return vendors.filter { $0.category.rawValue == selectedCategory }
+    }
+    
+    
+    
+ 
+    
     let columns = Array(repeating: GridItem(.flexible(), spacing: 16), count: 3)
 
     var body: some View {
@@ -39,9 +50,12 @@ struct VendorsView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 24) {
                     ForEach(VendorsView.categories, id: \.self) { category in
-
+                        
+                        
+                        
                         Button {
                             selectedCategory = category
+                            
                         } label: {
                             
                             VStack{
@@ -73,8 +87,9 @@ struct VendorsView: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.bottom,28)
+           
             
-            VendorsGridView()
+            VendorsGridView(vendors:filteredVendors)
             
            
 
