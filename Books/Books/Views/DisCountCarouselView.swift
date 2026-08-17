@@ -10,10 +10,11 @@ import SwiftUI
 struct DisCountCarouselView: View {
     @State private var selectedID: Discount.ID?
     let cards = Discount.cards
+    @StateObject private  var viewModel = DiscountViewModel()
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
-                ForEach(cards) { card in
+                ForEach(viewModel.cards) { card in
                     DiscountCard(card: card)
                         .containerRelativeFrame(.horizontal)
                         .id(card.id)
@@ -28,7 +29,7 @@ struct DisCountCarouselView: View {
         .padding(.bottom,16)
 
         LazyHStack {
-            ForEach(cards) { card in
+            ForEach(viewModel.cards) { card in
                 let isSelected = card.id == selectedID
                 Circle()
                     .fill(
