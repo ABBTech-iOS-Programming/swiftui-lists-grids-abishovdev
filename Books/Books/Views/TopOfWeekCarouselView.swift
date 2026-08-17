@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct TopOfWeekCarouselView: View {
-    let books = Book.books
+    
+    
+    @StateObject private var viewModel = BookViewModel()
     var body: some View {
        
         TitleView(title: "Top of week", btnTitle: "See all")
         ScrollView(.horizontal,showsIndicators: false) {
             LazyHStack(spacing: 12){
-                ForEach(books){ book in
+                ForEach(viewModel.books){ book in
                     TopOfWeekCard(book: book)
                     
                 }
