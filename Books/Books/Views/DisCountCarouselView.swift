@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DisCountCarouselView: View {
     @State private var selectedID: Discount.ID?
-    let cards = Discount.cards
+   
     @StateObject private  var viewModel = DiscountViewModel()
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -44,7 +44,7 @@ struct DisCountCarouselView: View {
             }
         }
         .onAppear {
-            if selectedID == nil { selectedID = cards.first?.id }
+            if selectedID == nil { selectedID = viewModel.cards.first?.id }
         }
     }
 }
