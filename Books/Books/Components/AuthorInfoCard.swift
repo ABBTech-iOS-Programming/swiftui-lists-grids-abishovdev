@@ -37,5 +37,5 @@ struct AuthorInfoCard: View {
 }
 
 #Preview {
-    AuthorInfoCard(author: Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the",type: "Writer",profession: .playwrights))
+    AuthorInfoCard(author: Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the",type: "Writer",profession: .playwrights,products: [Book.books.first].compactMap { $0 }))
 }

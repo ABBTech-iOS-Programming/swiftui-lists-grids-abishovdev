@@ -21,8 +21,10 @@ struct AuthorListView: View {
             else{
                 LazyVStack(spacing: 32){
                     ForEach(authors){author in
+                        NavigationLink(destination: AuthorDetail(author: author)) {
                             AuthorInfoCard(author: author)
-                        
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
             }
@@ -32,5 +34,5 @@ struct AuthorListView: View {
 }
 
 #Preview {
-    AuthorListView(authors: [Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the",type: "Writer",profession: .poets)])
+    AuthorListView(authors: [Author(fullname: "John Freeman", image: .author, bio: "American writer he  was the editor of the",type: "Writer",profession: .poets,products: [Book.books.first].compactMap { $0 })])
 }

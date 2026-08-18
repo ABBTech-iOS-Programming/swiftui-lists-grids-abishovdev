@@ -28,6 +28,9 @@ struct Home: View {
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
             .background(.white)
+            .navigationDestination(for: Author.self) { author in
+                AuthorDetail(author: author)
+            }
             
             
             

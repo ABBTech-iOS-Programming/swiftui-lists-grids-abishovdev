@@ -18,8 +18,10 @@ struct AuthorCarouselView: View {
         ScrollView(.horizontal,showsIndicators: false){
             LazyHStack(spacing:20){
                 ForEach(authors){ author in
-                    AuthorCard(author: author)
-                    
+                    NavigationLink(value: author) {
+                        AuthorCard(author: author)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
         }

@@ -25,6 +25,7 @@ struct Book:Identifiable{
 extension Book{
     static let books: [Book] = [
         Book(
+
             name: "The Kite Runner",
             category: "dram",
             topOfWeek: true,
